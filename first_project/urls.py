@@ -13,13 +13,15 @@ Including another URLconf
     1. Import the include() function: from django.urls import include, path
     2. Add a URL to urlpatterns:  path('blog/', include('blog.urls'))
 """
+from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-urlpatterns = [
+if settings.DEBUG:
+    import debug_toolbar
 
-    path('index/', include('first_app.urls')),
-    path('polls/', include('first_app.urls')),
-    path('admin/', admin.site.urls),
-    path('formpage/', include('first_app.urls'))
+urlpatterns = [
+    path('__debug__/', include(debug_toolbar.urls)),
+    path('polls/', include('polls.urls')),
+    path('admin/', admin.site.urls)
 ]

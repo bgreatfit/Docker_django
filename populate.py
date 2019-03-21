@@ -9,32 +9,33 @@ print(__name__)
 
 # FAKE POP
 import random
-from first_app.models import Topic, WebPage, AccessRecords
+from polls.models import Question, Choice
 
 from faker import Faker
 
-topics = ['Webpage', 'Ecommerce', 'Computers', 'Education', 'Information']
+topics = ['What is a Webpage', 'Ecommerce', 'Computers', 'Education', 'Information']
 fakegen = Faker()
 
 
-def add_topic():
-    topic = Topic.objects.get_or_create(top_name=random.choice(topics))[0]
-    return topic
+def add_question(date):
+    question = Question.objects.get_or_create(question_text=random.choice(topics),pub_date=date)[0]
+    return question
 
 
 def populate(N=5):
     for entry in range(N):
         # get topic for the entry
-        top = add_topic()
-        fake_url = fakegen.url()
         fake_date = fakegen.date()
-        fake_name= fakegen.company()
+        qst = add_question(fake_date)
+        fake_number = random.randint(1,5)
+        #
+        fake_text= fakegen.text()
 
         # create the new web page entry
-        webpg = WebPage.objects.get_or_create(topic=top, name=fake_name,url=fake_url)[0]
+        choice = Choice.objects.get_or_create(question=qst, votes=fake_number, choice_text=fake_text)[0]
 
         # create access record
-        acc_rec = AccessRecords.objects.get_or_create(webpage=webpg, date=fake_date)[0]
+        # acc_rec = AccessRecords.objects.get_or_create(webpage=webpg, date=fake_date)[0]
 
 if __name__ == '__main__':
     populate(10)
