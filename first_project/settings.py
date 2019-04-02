@@ -95,18 +95,32 @@ WSGI_APPLICATION = 'first_project.wsgi.application'
 
 # Database
 # https://docs.djangoproject.com/en/2.1/ref/settings/#databases
-
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'polls',
         'USER': 'root',
         'PASSWORD': '',
-        'HOST': 'localhost'
-
-
+        'HOST': 'localhost',
+        'PORT': '3306',
+        'TEST': {
+            'NAME': 'docker_django_db_test',
+        },
     }
 }
+# DATABASES = {
+#     'default': {
+#         'ENGINE': 'django.db.backends.mysql',
+#         'NAME': 'polls  ',
+#         'USER': 'root',
+#         'PASSWORD': '',
+#         'HOST': 'mysql',
+#         'PORT': '3306',
+#         'TEST': {
+#             'NAME': 'docker_django_db_test',
+#         },
+#     }
+# }
 
 
 # Password validation

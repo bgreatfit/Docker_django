@@ -1,15 +1,34 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.urls import reverse
+from django.views import generic
 from django.template import loader
-import pandas as pd
-import numpy as np
 from .models import Question,Choice, Topic,WebPage,AccessRecords
 from . import forms, new_user_form
-import matplotlib.pyplot as plt
 
 
 # Create your views here.
+
+class IndexView(generic.ListView):
+    context_object_name = 'latest_question_list'
+    template_name = 'polls/index.html'
+
+    def get_queryset(self):
+        """Return the last five published questions."""
+        return Question.objects.order_by('-pub_date')[:5]
+
+
+class DetailView(generic.DetailView):
+    model = Question
+    template_name = 'polls/detail.html'
+
+
+class ResultView(generic.DetailView):
+    model = Question
+    template_name = 'polls/result.html'
+
+
+
 
 def index(request):
     latest_question_list = Question.objects.order_by('-pub_date')[:5]
@@ -30,15 +49,11 @@ def detail(request, question_id):
     question = get_object_or_404(Question, pk=question_id)
     return render(request, 'polls/detail.html', {'question': question})
 
-def results(request, question_id):
-    response = "You're looking at the results of question %s."
-    return HttpResponse(response % question_id)
-
 
 def vote(request, question_id):
     question = Question.objects.get(pk=question_id)
     try:
-        selected_choice = question.choice_set(pk=request.POST['choice'])
+        selected_choice = question.choice_set.get(pk=request.POST['choice'])
     except (KeyError, Choice.DoesNotExist):
         # Redisplay the question voting form.
         return render(request, 'polls/detail.html', {
@@ -51,28 +66,35 @@ def vote(request, question_id):
         # Always return an HttpResponseRedirect after successfully dealing
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
-        return HttpResponseRedirect(reverse('polls:results', args=(question.id,)))
+        return HttpResponseRedirect(reverse('polls:result', args=(question.id,)))
 
 
-def polls(request, id):
+def results(request, question_id):
+    question = get_object_or_404(Question, pk=question_id)
 
-    # try:
-    question_test = {'test': ['hi', 'two', 'three']}
-    response = ",".join([question for question in question_test['test']])
-    #map();
-    # except
+    return render(request, 'polls/result.html', {'question': question})
 
 
 
-    data = np.random.randn(2, 3);
-    data = {'data':data}
-    latest_question_list = Question.objects.order_by('-pub_date')
-    context = {'latest_question_list': latest_question_list,'data':data}
-    # return latest_question_list
-    # output = ', '.join([q.question_text for q in latest_question_list])
-    return render(request,'polls/polls.html',context)
-    #return render(request,'first_app.index.html')
-
+# def polls(request, id):
+#
+#     # try:
+#     question_test = {'test': ['hi', 'two', 'three']}
+#     response = ",".join([question for question in question_test['test']])
+#     #map();
+#     # except
+#
+#
+#
+#    # data = np.random.randn(2, 3);
+#     data = {'data':data}
+#     latest_question_list = Question.objects.order_by('-pub_date')
+#     context = {'latest_question_list': latest_question_list,'data':data}
+#     # return latest_question_list
+#     # output = ', '.join([q.question_text for q in latest_question_list])
+#     return render(request,'polls/polls.html',context)
+#     #return render(request,'first_app.index.html')
+#
 
 def view(request,id):
     try:
