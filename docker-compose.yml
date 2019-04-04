@@ -14,7 +14,8 @@
 ###############################################################################
 version: "3.1"
 
-
+volumes:
+    db-data:
 
 services:
 
@@ -33,12 +34,12 @@ services:
       image: mysql:5.6
       container_name: ${PROJECT_NAME}-mysql
       volumes:
-        - .db_data:/first_project
+        - db-data:/var/lib/mysql
       environment:
-        - MYSQL_ROOT_PASSWORD=
-        - MYSQL_DATABASE=polls
-        - MYSQL_USER=root
-        - MYSQL_PASSWORD=
+        - MYSQL_ROOT_PASSWORD=docker_root
+        - MYSQL_DATABASE=docker_django_db
+        - MYSQL_USER=dbuser
+        - MYSQL_PASSWORD=dbpw
       ports:
         - "8306:3306"
 

@@ -11,7 +11,7 @@ RUN apt-get update \
     && apt-get clean; rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* /usr/share/doc/*
 
 ADD requirements.txt /first_project/
-# RUN pip install -r requirements.txt
-RUN pip install pipenv
-RUN pipenv install
+RUN pip install -r requirements.txt
+#RUN pip install pipenv
+#RUN pipenv install
 

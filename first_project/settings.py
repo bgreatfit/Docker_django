@@ -98,10 +98,10 @@ WSGI_APPLICATION = 'first_project.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'polls',
-        'USER': 'root',
-        'PASSWORD': '',
-        'HOST': 'localhost',
+        'NAME': 'docker_django_db',
+        'USER': 'dbuser',
+        'PASSWORD': 'dbpw',
+        'HOST': 'mysql',
         'PORT': '3306',
         'TEST': {
             'NAME': 'docker_django_db_test',
