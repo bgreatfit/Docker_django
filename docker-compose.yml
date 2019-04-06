@@ -19,12 +19,12 @@ version: "3.1"
 services:
 
     django:
-      build: .
-      container_name: docker_django-django
+      build: ./app
+      container_name: ${PROJECT_NAME}-django
       command: gunicorn first_project.wsgi:application --bind 0.0.0.0:8000
       volumes:
-        - .:/first_project
-        - static_volume:/first_project/static
+        - ./app:/app
+        - static_volume:/app/static
       expose:
          - 8000
       depends_on:
@@ -32,7 +32,7 @@ services:
 
     mysql:
       image: mysql:5.6
-      container_name: docker_django-mysql
+      container_name: ${PROJECT_NAME}-mysql
       volumes:
         - db-data:/var/lib/mysql
       environment:
@@ -46,6 +46,7 @@ services:
 
     phpmyadmin:
       image: phpmyadmin/phpmyadmin
+      container_name: ${PROJECT_NAME}-phpmyadmin
       environment:
           - PMA_ARBITRARY=1
       restart: always
@@ -56,8 +57,9 @@ services:
 
     nginx:
       build: ./nginx
+      container_name: ${PROJECT_NAME}-nginx
       volumes:
-           - static_volume:/first_project/static
+           - static_volume:/app/static
       ports:
            - 1337:80
       depends_on:
