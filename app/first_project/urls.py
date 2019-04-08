@@ -17,11 +17,11 @@ from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
 
-if settings.DEBUG:
-    import debug_toolbar
+# if settings.DEBUG:
+#     import debug_toolbar
 
 urlpatterns = [
-    path('__debug__/', include(debug_toolbar.urls)),
+    # path('__debug__/', include(debug_toolbar.urls)),
     path('polls/', include('polls.urls')),
     path('admin/', admin.site.urls)
 ]

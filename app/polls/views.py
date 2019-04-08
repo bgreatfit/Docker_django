@@ -1,6 +1,7 @@
 from django.shortcuts import render,get_object_or_404
 from django.http import HttpResponse, Http404, HttpResponseRedirect
 from django.urls import reverse
+from django.utils import timezone
 from django.views import generic
 from django.template import loader
 from .models import Question,Choice, Topic,WebPage,AccessRecords
@@ -15,7 +16,8 @@ class IndexView(generic.ListView):
 
     def get_queryset(self):
         """Return the last five published questions."""
-        return Question.objects.order_by('-pub_date')[:5]
+        now = timezone.now()
+        return Question.objects.filter(pub_date__lte=now).order_by('-pub_date')[:5]
 
 
 class DetailView(generic.DetailView):
@@ -26,8 +28,6 @@ class DetailView(generic.DetailView):
 class ResultView(generic.DetailView):
     model = Question
     template_name = 'polls/result.html'
-
-
 
 
 def index(request):
