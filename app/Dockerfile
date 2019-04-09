@@ -31,4 +31,4 @@ COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
 COPY . /app/
 
 # run entrypoint.sh
-ENTRYPOINT ["/app/entrypoint.sh"]
+RUN ["chmod","+x","/app/entrypoint.sh"]
