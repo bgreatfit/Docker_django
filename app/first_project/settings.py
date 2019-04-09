@@ -117,19 +117,7 @@ DATABASES = {
         'PORT': '3306'
     }
 }
-# DATABASES = {
-#     'default': {
-#         'ENGINE': 'django.db.backends.mysql',
-#         'NAME': 'polls  ',
-#         'USER': 'root',
-#         'PASSWORD': '',
-#         'HOST': 'mysql',
-#         'PORT': '3306',
-#         'TEST': {
-#             'NAME': 'docker_django_db_test',
-#         },
-#     }
-# }
+
 
 
 # Password validation
