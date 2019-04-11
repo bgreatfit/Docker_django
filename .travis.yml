@@ -3,8 +3,8 @@ services:
     - docker
 
 before_install:
-    - docker-compose up --build   -d
+    - docker-compose up   -d
 
 script:
-    - docker-compose run mysql
-    - docker-compose run   django python manage.py test polls
+    - docker-compose run django python manage.py test polls
+
