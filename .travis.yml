@@ -9,5 +9,5 @@ before_install:
 
 
 script:
-    - docker-compose exec django python manage.py test polls
+    - docker-compose run django python manage.py test polls
 
