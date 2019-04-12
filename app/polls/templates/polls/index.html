@@ -11,11 +11,11 @@
     <link rel="stylesheet" type="text/css" href="{% static 'polls/style.css' %}">
 </head>
 <body>
-<h1>HOME</h1>
+<h1>HOME  555555555</h1>
 {% if latest_question_list or data %}
  <ul>
     {% for question in latest_question_list %}
-        <li><a href="/polls/{{ question.id }}/">{{ question.question_text }}{{data}}</a></li>
+        <li><a href="/polls/{{ question.id }}/">{{ question.pub_date }}{{data}}</a></li>
     {% endfor %}
     </ul>
 {% else %}

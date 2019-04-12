@@ -4,8 +4,9 @@ services:
 
 before_install:
     - docker-compose up   -d
+    - docker ps
+    - docker-compose run --no-deps django python manage.py test polls
 
 script:
-    - docker ps
     - docker-compose run django python manage.py test polls
 
