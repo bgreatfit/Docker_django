@@ -9,5 +9,5 @@ before_install:
 
 
 script:
-    - python manage.py test polls # echo 'Tests moved to docker compose' # docker-compose run django python manage.py test polls
+    -  echo 'Tests moved to docker compose' # docker-compose run django python manage.py test polls
 
