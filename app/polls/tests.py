@@ -67,37 +67,6 @@ def test_no_questions(client):
     assert not latest_list
 
 
-@pytest.mark.django_db
-def test_past_question(client):
-    create_question(question_text="Past question.", pub_date=n_days_ago(30))
-    latest_list = get_latest_list(client)
-    assert_question_list_equals(latest_list, ["Past question."])
-
-
-@pytest.mark.django_db
-def test_future_question(client):
-    create_question(question_text="Future question.", pub_date=n_days_later(30))
-    response = client.get(reverse('polls:index'))
-    assert_no_polls(response.rendered_content)
-    latest_list = get_latest_list(client)
-    assert not latest_list
-
-
-@pytest.mark.django_db
-def test_future_question_and_past_question(client):
-    create_question(question_text="Past question.", pub_date=n_days_ago(30))
-    create_question(question_text="Future question.", pub_date=n_days_later(30))
-    latest_list = get_latest_list(client)
-    assert_question_list_equals(latest_list, ["Past question."])
-
-
-@pytest.mark.django_db
-def test_two_past_questions(client):
-    create_question(question_text="Past question 1.", pub_date=n_days_ago(30))
-    create_question(question_text="Past question 2.", pub_date=n_days_ago(5))
-    latest_list = get_latest_list(client)
-    expected_texts = ["Past question 2.", "Past question 1."]
-    assert_question_list_equals(latest_list, expected_texts)
 # class QuestionModelTests(TestCase):
 #
 #     def test_was_published_recently_with_future_question(self):
