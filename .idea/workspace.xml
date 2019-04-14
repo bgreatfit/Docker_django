@@ -2,13 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7186a8b-9b36-4704-b7e7-8f846767ea32" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/.coveragerc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/pytest.ini" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.travis.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.travis.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Pipfile" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pipfile" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/Pipfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/app/Pipfile.lock" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/polls/tests.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/polls/tests.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/htmlcov/first_project___init___py.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/htmlcov/first_project___init___py.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/htmlcov/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/htmlcov/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/htmlcov/polls_admin_py.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/htmlcov/polls_admin_py.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/htmlcov/polls_forms_py.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/htmlcov/polls_forms_py.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/htmlcov/polls_models_py.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/htmlcov/polls_models_py.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/htmlcov/polls_new_user_form_py.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/htmlcov/polls_new_user_form_py.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/htmlcov/polls_tests_py.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/htmlcov/polls_tests_py.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/htmlcov/polls_views_py.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/htmlcov/polls_views_py.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/htmlcov/status.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/htmlcov/status.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/pytest.ini" beforeDir="false" afterPath="$PROJECT_DIR$/app/pytest.ini" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -46,8 +50,8 @@
       <file leaf-file-name=".travis.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.travis.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="92">
-              <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+            <state relative-caret-position="134">
+              <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
             </state>
           </provider>
         </entry>
@@ -64,8 +68,8 @@
       <file leaf-file-name="pytest.ini" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/pytest.ini">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="23">
-              <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+            <state relative-caret-position="69">
+              <caret line="3" selection-start-line="3" selection-end-line="3" />
             </state>
           </provider>
         </entry>
@@ -78,8 +82,8 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/first_project/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="129">
-              <caret line="112" column="24" selection-start-line="112" selection-start-column="24" selection-end-line="112" selection-end-column="24" />
+            <state relative-caret-position="138">
+              <caret line="73" column="29" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="29" />
             </state>
           </provider>
         </entry>
@@ -184,12 +188,6 @@
               <item name="first_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="first_project" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="first_project" type="b2602c69:ProjectViewProjectNode" />
-              <item name="first_project" type="462c0819:PsiDirectoryNode" />
-              <item name="app" type="462c0819:PsiDirectoryNode" />
-              <item name="polls" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -333,8 +331,8 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32827324" />
       <window_info anchor="bottom" id="Version Control" order="7" />
       <window_info anchor="bottom" id="Python Console" order="7" weight="0.32827324" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="7" visible="true" weight="0.5142315" />
-      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.18960245" />
+      <window_info anchor="bottom" id="Terminal" order="7" visible="true" weight="0.3605313" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.18960245" />
       <window_info anchor="bottom" id="Pylint" order="7" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.47817838" />
       <window_info anchor="right" id="Database" order="3" />
@@ -659,13 +657,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/first_project/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="129">
-          <caret line="112" column="24" selection-start-line="112" selection-start-column="24" selection-end-line="112" selection-end-column="24" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/requirements.txt">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="161">
@@ -673,17 +664,24 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/first_project/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="138">
+          <caret line="73" column="29" selection-start-line="73" selection-start-column="16" selection-end-line="73" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/app/pytest.ini">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="23">
-          <caret line="1" column="34" selection-start-line="1" selection-start-column="34" selection-end-line="1" selection-end-column="34" />
+        <state relative-caret-position="69">
+          <caret line="3" selection-start-line="3" selection-end-line="3" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/.travis.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="92">
-          <caret line="12" lean-forward="true" selection-start-line="12" selection-end-line="12" />
+        <state relative-caret-position="134">
+          <caret line="11" column="34" lean-forward="true" selection-start-line="11" selection-start-column="34" selection-end-line="11" selection-end-column="34" />
         </state>
       </provider>
     </entry>

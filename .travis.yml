@@ -9,6 +9,6 @@ before_install:
 
 
 script:
-    -  docker-compose exec django python -m pytest
+    -  docker-compose exec django  pytest
 
 
