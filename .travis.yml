@@ -9,6 +9,6 @@ before_install:
 
 
 script:
-    -  docker-compose exec django  pytest
+    -  docker-compose exec mysql  
 
 
