@@ -10,7 +10,7 @@ before_install:
 script:
     - docker inspect -f \
     '{{range .NetworkSettings.Networks}}{{.IPAddress}}{{end}}:3306' \
-    docker_django-mysql
+    docker_django-mysql #inspeting is mysql is ok
     -  docker-compose exec django  pytest
 
 
