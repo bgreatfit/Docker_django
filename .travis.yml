@@ -5,6 +5,7 @@ services:
 
 before_install:
     - docker-compose up --build -d
+    - docker-compose logs mysql
 
 script:
     - docker-compose logs mysql
