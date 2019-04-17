@@ -22,7 +22,6 @@ services:
       build: ./app
       container_name: ${PROJECT_NAME}-django
       command: gunicorn first_project.wsgi:application --bind 0.0.0.0:8000
-      command: sh -c "python manage.py makemigrations && python manage.py test polls"
       volumes:
         - ./app:/app
         - static_volume:/app/static
