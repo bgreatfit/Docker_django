@@ -6,8 +6,6 @@ services:
 before_install:
     - docker-compose up -d
 
-script:
-    - docker-compose exec django python manage.py test polls
 
 
 
