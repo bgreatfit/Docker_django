@@ -8,7 +8,15 @@ before_install:
 
 script:
     - docker-compose run django python manage.py test polls
-
+deploy:
+   provider: elasticbeanstalk
+   region: "us-east-2"
+   app: "docker-django"
+   env: "DockerDjango-env"
+   bucket_name: "elasticbeanstalk-us-east-2-868028514381"
+   bucket_path: "docker-django"
+   on:
+     branch: master
 
 
 
