@@ -1,6 +1,7 @@
 version: 2
 jobs:
   build:
+    working_directory: first_project
     docker:
       - image: circleci/python:3.6.8
     steps:
