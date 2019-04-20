@@ -113,7 +113,7 @@ DATABASES = {
         'NAME': 'docker_django_db',
         'USER': 'dbuser',
         'PASSWORD': 'dbpw',
-        'HOST': 'mysql',
+        'HOST': '127.0.0.1',
         'PORT': '3306'
     }
 }
