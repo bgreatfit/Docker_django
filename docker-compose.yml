@@ -43,7 +43,7 @@ services:
         - MYSQL_USER=dbuser
         - MYSQL_PASSWORD=dbpw
       ports:
-        - "8306:3306"
+        - "83302:3306"
 
 
     phpmyadmin:
