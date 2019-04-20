@@ -8,7 +8,8 @@ jobs:
       - setup_remote_docker
       - run:
           name: Start container and verify it's working
-          command: docker-compose up --build
+          command: docker-compose up --build -d
+          command: docker ps
       - run:
           name: Let client talk to server
-          command: docker-compose run django bash
+          command: docker inspect docker_django-django
