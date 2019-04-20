@@ -22,7 +22,7 @@ services:
       build: ./app
       container_name: ${PROJECT_NAME}-django
       command: gunicorn first_project.wsgi:application --bind 0.0.0.0:8000  --preload --workers 1
-      command: python ./first_project/app/manage.py test polls
+      command: python ./app/manage.py test polls
       volumes:
         - ./app:/app
         - static_volume:/app/static
