@@ -14,5 +14,5 @@ python manage.py flush --no-input
 python manage.py collectstatic --no-input
 
 exec "$@"
-gunicorn --timeout=30 --workers=2 --bind 0.0.0.0:8000 first_project.wsgi:application
+#gunicorn --timeout=30 --workers=2 --bind 0.0.0.0:8000 first_project.wsgi:application
 #python manage.py runserver 0.0.0.0:8000
