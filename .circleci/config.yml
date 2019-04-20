@@ -13,4 +13,4 @@ jobs:
              docker ps
       - run:
           name: Let client talk to server
-          command: docker inspect docker_django-nginx
+          command:  docker exec docker_django-django python manage.py test polls
