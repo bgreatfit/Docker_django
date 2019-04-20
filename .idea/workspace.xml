@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7186a8b-9b36-4704-b7e7-8f846767ea32" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/.circleci/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.circleci/config.yml" afterDir="false" />
-    </list>
+    <list default="true" id="b7186a8b-9b36-4704-b7e7-8f846767ea32" name="Default" comment="" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -48,8 +46,8 @@
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="249">
-              <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+            <state>
+              <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
             </state>
           </provider>
         </entry>
@@ -356,7 +354,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="16" />
       <window_info anchor="bottom" id="Event Log" order="21" sideWeight="0.50152904" side_tool="true" weight="0.39658445" />
@@ -364,7 +361,7 @@
       <window_info anchor="bottom" id="Version Control" order="18" />
       <window_info anchor="bottom" id="Python Console" order="23" weight="0.32967034" />
       <window_info anchor="bottom" id="Run" order="4" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="22" sideWeight="0.49847096" visible="true" weight="0.19924098" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="22" sideWeight="0.49847096" visible="true" weight="0.39848197" />
       <window_info content_ui="combo" id="Project" order="0" sideWeight="0.40480962" visible="true" weight="0.2117737" />
       <window_info anchor="bottom" id="Pylint" order="19" />
       <window_info anchor="bottom" id="Docker" order="17" weight="0.43453512" />
@@ -693,8 +690,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="249">
-          <caret line="13" column="56" selection-start-line="13" selection-start-column="56" selection-end-line="13" selection-end-column="56" />
+        <state>
+          <caret line="8" column="12" lean-forward="true" selection-start-line="8" selection-start-column="12" selection-end-line="8" selection-end-column="12" />
         </state>
       </provider>
     </entry>
