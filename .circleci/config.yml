@@ -11,4 +11,4 @@ jobs:
           command: docker-compose up --build -d
       - run:
           name: Let client talk to server
-          command: docker-compose exec django bash python manage.py test polls
+          command: docker-compose run docker_django-django  --no-deps python manage.py test polls
