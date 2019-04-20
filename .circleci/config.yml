@@ -9,7 +9,7 @@ jobs:
       - run:
           name: Start container and verify it's working
           command: |
-             docker-compose up --build 
+             docker-compose up --build
              docker ps
       - run:
           name: Let client talk to server
