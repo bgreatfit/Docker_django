@@ -7,7 +7,7 @@ before_install:
     - docker-compose up -d
 
 script:
-    - echo "docker exec docker_django-django python manage.py test polls"
+    - docker exec docker_django-django python manage.py test polls
 deploy:
    provider: elasticbeanstalk
    region: "us-east-2"
