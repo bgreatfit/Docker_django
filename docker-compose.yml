@@ -21,8 +21,7 @@ services:
     django:
       build: ./app
       container_name: ${PROJECT_NAME}-django
-      command: gunicorn first_project.wsgi:application --bind 0.0.0.0:8000  --preload --workers 1
-      volumes:
+      command: /app/entrypoint.sh
         - static_volume:/app/static
       expose:
          - 8000
@@ -32,7 +31,7 @@ services:
         - mysql:mysql
 
     mysql:
-      image: mariadb:5.5
+      image: mysql:5.6
       restart: 'always'
       container_name: ${PROJECT_NAME}-mysql
       volumes:
