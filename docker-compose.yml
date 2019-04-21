@@ -27,11 +27,11 @@ services:
       expose:
          - 8000
       depends_on:
-        - db
+        - mysql
       links:
-        - db:db
+        - mysql:mysql
 
-    db:
+    mysql:
       image: mariadb:5.5
       restart: 'always'
       container_name: ${PROJECT_NAME}-mysql
