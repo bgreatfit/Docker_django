@@ -30,8 +30,6 @@ services:
         - mysql
       links:
         - mysql:mysql
-      networks:
-        - base
 
     mysql:
       image: mysql:5.6
