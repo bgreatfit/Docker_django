@@ -38,8 +38,9 @@ services:
         - db-data:/var/lib/mysql
       restart: 'always'
       ports:
-        - '3306:3306'
+        - '3302:3306'
       environment:
+        - MYSQL_HOST=localhost
         - MYSQL_ROOT_PASSWORD=docker_root
         - MYSQL_DATABASE=docker_django_db
         - MYSQL_USER=dbuser
