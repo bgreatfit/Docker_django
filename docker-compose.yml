@@ -29,9 +29,11 @@ services:
         - mysql
       links:
         - mysql:mysql
+      networks:
+        - base
 
     mysql:
-      image: mysql:5.6
+      image: mysql:5.7.18
       restart: 'always'
       container_name: ${PROJECT_NAME}-mysql
       volumes:
@@ -44,6 +46,8 @@ services:
         - MYSQL_USER=dbuser
         - MYSQL_PASSWORD=dbpw
         - MYSQL_PORT=3306
+      networks:
+        - base
 
 
 
@@ -72,4 +76,5 @@ services:
 volumes:
   db-data:
   static_volume:
-
+networks:
+  base:
