@@ -7,7 +7,7 @@ before_install:
     - docker-compose up -d
 
 script:
-    - docker exec docker_django-django python manage.py test polls
+    - docker-compose run django python manage.py test polls
 deploy:
    provider: elasticbeanstalk
    region: "us-east-2"
@@ -17,6 +17,9 @@ deploy:
    bucket_path: "docker-django"
    on:
      branch: master
+   access_key_id: "$AWS_ACCESS_KEY"
+   secret_key_id:
+     secure: $AWS_SECRET_KEY
 
 
 
