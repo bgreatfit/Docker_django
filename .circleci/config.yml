@@ -6,6 +6,11 @@ jobs:
       - image: circleci/python:3.6.8
     steps:
       - checkout
+      - setup_remote_docker
+      - run:
+          name: Start container and verify it's working
+          command: |
+             docker-compose up --build -d
       - run:
           name: install dockerize
           command: wget https://github.com/jwilder/dockerize/releases/download/$DOCKERIZE_VERSION/dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && sudo tar -C /usr/local/bin -xzvf dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz && rm dockerize-linux-amd64-$DOCKERIZE_VERSION.tar.gz
@@ -14,10 +19,6 @@ jobs:
       - run:
           name: Wait for db
           command: dockerize -wait tcp://localhost:3306 -timeout 1m
-      - run:
-          name: Start container and verify it's working
-          command: |
-             docker-compose up --build -d
       - run:
           name: Let client talk to server
           command:  docker exec docker_django-django python manage.py test polls
