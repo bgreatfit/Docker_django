@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="b7186a8b-9b36-4704-b7e7-8f846767ea32" name="Default" comment="">
-      <change beforePath="$PROJECT_DIR$/app/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/app/entrypoint.sh" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/first_project/settings.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/first_project/settings.py" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -94,7 +94,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="true">
+      <file leaf-file-name="Dockerfile" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/Dockerfile">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-79">
@@ -103,11 +103,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
+      <file leaf-file-name="settings.py" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/first_project/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1380">
-              <caret line="78" column="54" selection-start-line="78" selection-start-column="54" selection-end-line="78" selection-end-column="54" />
+            <state relative-caret-position="46">
+              <caret line="77" column="52" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="52" />
             </state>
           </provider>
         </entry>
@@ -161,11 +161,11 @@
         <option value="$PROJECT_DIR$/app/polls/models.py" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/app/polls/views.py" />
-        <option value="$PROJECT_DIR$/app/first_project/settings.py" />
         <option value="$PROJECT_DIR$/app/templates/admin/base_site.html" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
         <option value="$PROJECT_DIR$/app/Dockerfile" />
         <option value="$PROJECT_DIR$/app/entrypoint.sh" />
+        <option value="$PROJECT_DIR$/app/first_project/settings.py" />
       </list>
     </option>
   </component>
@@ -201,6 +201,12 @@
               <item name="first_project" type="b2602c69:ProjectViewProjectNode" />
               <item name="first_project" type="462c0819:PsiDirectoryNode" />
               <item name="app" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="first_project" type="b2602c69:ProjectViewProjectNode" />
+              <item name="first_project" type="462c0819:PsiDirectoryNode" />
+              <item name="app" type="462c0819:PsiDirectoryNode" />
+              <item name="first_project" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
@@ -384,8 +390,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.05882353" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32827324" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49847096" weight="0.10056926" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.40480962" visible="true" weight="0.2117737" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49847096" visible="true" weight="0.5882353" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.40480962" visible="true" weight="0.2117737" />
       <window_info anchor="bottom" id="Pylint" order="9" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.4060721" />
       <window_info anchor="right" id="Database" order="4" />
@@ -663,13 +669,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/first_project/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1380">
-          <caret line="78" column="54" selection-start-line="78" selection-start-column="54" selection-end-line="78" selection-end-column="54" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$USER_HOME$/.virtualenvs/first_project-BKkNRODy/Lib/site-packages/Django-2.1.5.dist-info/RECORD">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="77579">
@@ -754,6 +753,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-79">
           <caret line="15" column="29" selection-start-line="15" selection-start-column="29" selection-end-line="15" selection-end-column="29" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/first_project/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="46">
+          <caret line="77" column="52" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="52" />
         </state>
       </provider>
     </entry>
