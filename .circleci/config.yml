@@ -11,7 +11,6 @@ jobs:
           name: Start container and verify it's working
           command: |
              docker-compose up --build  -d
-             docker-compose start  mysql
       - run:
           name: Let client talk to server
           command:  docker exec docker_django-mysql python manage.py test polls
