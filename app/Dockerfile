@@ -13,6 +13,7 @@ RUN apt-get update \
 
 # install dependencies
 COPY requirements.txt /app/
+RUN pip install --upgrade pip
 RUN pip install -r requirements.txt
 
 #RUN pip install --upgrade pip
@@ -29,6 +30,5 @@ COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
 
 # copy project
 COPY . /app/
-EXPOSE 80
 # run entrypoint.sh
 RUN ["chmod","+x","/app/entrypoint.sh"]
