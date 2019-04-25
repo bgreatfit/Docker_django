@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="b7186a8b-9b36-4704-b7e7-8f846767ea32" name="Default" comment="" />
+    <list default="true" id="b7186a8b-9b36-4704-b7e7-8f846767ea32" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/app/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/app/entrypoint.sh" afterDir="false" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -86,8 +88,8 @@
       <file leaf-file-name="entrypoint.sh" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/entrypoint.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="279">
-              <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
+            <state relative-caret-position="92">
+              <caret line="7" column="24" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -157,13 +159,13 @@
         <option value="$PROJECT_DIR$/.travis.yml" />
         <option value="$PROJECT_DIR$/app/polls/admin.py" />
         <option value="$PROJECT_DIR$/app/polls/models.py" />
-        <option value="$PROJECT_DIR$/app/entrypoint.sh" />
         <option value="$PROJECT_DIR$/docker-compose.yml" />
         <option value="$PROJECT_DIR$/app/polls/views.py" />
         <option value="$PROJECT_DIR$/app/first_project/settings.py" />
         <option value="$PROJECT_DIR$/app/templates/admin/base_site.html" />
         <option value="$PROJECT_DIR$/.circleci/config.yml" />
         <option value="$PROJECT_DIR$/app/Dockerfile" />
+        <option value="$PROJECT_DIR$/app/entrypoint.sh" />
       </list>
     </option>
   </component>
@@ -375,7 +377,6 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
-    <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="4" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50152904" side_tool="true" weight="0.39658445" />
@@ -662,13 +663,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/entrypoint.sh">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="279">
-          <caret line="14" lean-forward="true" selection-start-line="14" selection-end-line="14" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/first_project/settings.py">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="1380">
@@ -746,6 +740,13 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-221">
           <caret line="7" column="10" selection-start-line="7" selection-start-column="10" selection-end-line="7" selection-end-column="10" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/app/entrypoint.sh">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="92">
+          <caret line="7" column="24" selection-start-line="7" selection-start-column="17" selection-end-line="7" selection-end-column="24" />
         </state>
       </provider>
     </entry>
