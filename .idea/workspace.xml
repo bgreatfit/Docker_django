@@ -49,8 +49,8 @@
       <file leaf-file-name="config.yml" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="262">
-              <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+            <state relative-caret-position="69">
+              <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
             </state>
           </provider>
         </entry>
@@ -106,7 +106,7 @@
       <file leaf-file-name="settings.py" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/app/first_project/settings.py">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="46">
+            <state relative-caret-position="1679">
               <caret line="77" column="52" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="52" />
             </state>
           </provider>
@@ -398,8 +398,8 @@
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Python Console" order="13" weight="0.05882353" />
       <window_info anchor="bottom" id="Run" order="2" weight="0.32827324" />
-      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49847096" visible="true" weight="0.2618596" />
-      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.40480962" visible="true" weight="0.2117737" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49847096" visible="true" weight="0.2523719" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.40480962" weight="0.2117737" />
       <window_info anchor="bottom" id="Pylint" order="9" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.4060721" />
       <window_info anchor="right" id="Database" order="4" />
@@ -417,7 +417,7 @@
     </layout>
     <layout-to-restore>
       <window_info anchor="right" content_ui="combo" id="Hierarchy" order="2" weight="0.25" />
-      <window_info active="true" content_ui="combo" id="Project" order="0" sideWeight="0.40480962" visible="true" weight="0.2117737" />
+      <window_info content_ui="combo" id="Project" order="0" sideWeight="0.40480962" visible="true" weight="0.2117737" />
       <window_info anchor="bottom" id="Docker" order="7" weight="0.4060721" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
@@ -430,7 +430,7 @@
       <window_info anchor="bottom" id="Run" order="2" weight="0.32827324" />
       <window_info anchor="bottom" id="Find" order="1" />
       <window_info anchor="right" id="Database" order="4" />
-      <window_info anchor="bottom" id="Terminal" order="12" sideWeight="0.49847096" visible="true" weight="0.10056926" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="12" sideWeight="0.49847096" visible="true" weight="0.2618596" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50152904" side_tool="true" weight="0.39658445" />
       <window_info anchor="bottom" id="Inspection" order="6" weight="0.4" />
       <window_info anchor="right" id="SciView" order="3" />
@@ -729,13 +729,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/app/first_project/settings.py">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="46">
-          <caret line="77" column="52" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="52" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/app/Dockerfile">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-366">
@@ -764,10 +757,17 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/app/first_project/settings.py">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1679">
+          <caret line="77" column="52" selection-start-line="77" selection-start-column="17" selection-end-line="77" selection-end-column="52" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/.circleci/config.yml">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="262">
-          <caret line="15" column="67" selection-start-line="15" selection-start-column="67" selection-end-line="15" selection-end-column="67" />
+        <state relative-caret-position="69">
+          <caret line="15" column="55" selection-start-line="15" selection-start-column="55" selection-end-line="15" selection-end-column="55" />
         </state>
       </provider>
     </entry>
