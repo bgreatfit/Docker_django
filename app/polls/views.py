@@ -12,8 +12,6 @@ from . import forms, new_user_form
 # Create your views here.
 
 class IndexView(generic.ListView):
-    BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
-    print(BASE_DIR)
     context_object_name = 'latest_question_list'
     template_name = 'polls/index.html'
 

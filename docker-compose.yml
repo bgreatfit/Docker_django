@@ -21,8 +21,9 @@ services:
     django:
       build: ./app
       container_name: ${PROJECT_NAME}-django
-      command: gunicorn first_project.wsgi:application --bind 0.0.0.0:8000  --preload --workers 1
+      command: gunicorn first_project.wsgi:application --bind 0.0.0.0:8000
       volumes:
+        - ./app:/app
         - static_volume:/app/static
       expose:
          - 8000
