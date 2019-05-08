@@ -19,10 +19,13 @@ from django.urls import path, include
 
 # if settings.DEBUG:
 #     import debug_toolbar
-
 urlpatterns = [
+
+    path('admin/', admin.site.urls),
+]
+urlpatterns += [
     # path('__debug__/', include(debug_toolbar.urls)),
     path('polls/', include('polls.urls')),
     path('blog/', include('blog.urls')),
-    path('admin/', admin.site.urls)
+    path('catalog/', include('catalog.urls'))
 ]
