@@ -26,9 +26,10 @@ RUN pip install -r requirements.txt
 # copy project
 
 # copy entrypoint.sh
-COPY ./entrypoint.sh /usr/src/app/entrypoint.sh
 
 # copy project
 COPY . /app/
 # run entrypoint.sh
-RUN ["chmod","+x","/app/entrypoint.sh"]
+COPY ./entrypoint.sh /entrypoint.sh
+RUN chmod +x /entrypoint.sh
+ENTRYPOINT ["/entrypoint.sh"]

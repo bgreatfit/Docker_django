@@ -26,6 +26,6 @@ urlpatterns = [
 urlpatterns += [
     # path('__debug__/', include(debug_toolbar.urls)),
     path('polls/', include('polls.urls')),
-    path('blog/', include('blog.urls')),
-    path('catalog/', include('catalog.urls'))
+    #path('blog/', include('blog.urls')),
+    #path('catalog/', include('catalog.urls'))
 ]
