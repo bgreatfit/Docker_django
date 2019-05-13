@@ -27,6 +27,7 @@ RUN pip install -r requirements.txt
 
 # copy entrypoint.sh
 
+
 # copy project
 COPY . /app/
 # run entrypoint.sh
