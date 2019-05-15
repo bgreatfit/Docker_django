@@ -5,14 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b7186a8b-9b36-4704-b7e7-8f846767ea32" name="Default" comment="">
-      <change afterPath="$PROJECT_DIR$/app/blog/migrations/0025_auto_20190515_0647.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app/catalog/templates/catalog/book_list.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/blog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/blog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/catalog/urls.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/catalog/urls.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/catalog/views.py" beforeDir="false" afterPath="$PROJECT_DIR$/app/catalog/views.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/entrypoint.sh" beforeDir="false" afterPath="$PROJECT_DIR$/app/entrypoint.sh" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docker-compose.yml" beforeDir="false" afterPath="$PROJECT_DIR$/docker-compose.yml" afterDir="false" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,8 +55,8 @@
       <file leaf-file-name="entrypoint.sh" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/app/entrypoint.sh">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="289">
-              <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+            <state relative-caret-position="128">
+              <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
             </state>
           </provider>
         </entry>
@@ -413,7 +406,7 @@
     </history-entry>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1382" height="744" extended-state="6" />
+    <frame x="-8" y="-8" width="1382" height="744" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info anchor="bottom" id="TODO" order="4" />
@@ -826,8 +819,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/app/entrypoint.sh">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="289">
-          <caret line="17" column="9" selection-start-line="17" selection-start-column="9" selection-end-line="17" selection-end-column="9" />
+        <state relative-caret-position="128">
+          <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
         </state>
       </provider>
     </entry>
