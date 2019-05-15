@@ -12,7 +12,8 @@ def index(request):
     # Generate counts of some of the main objects
     num_books = Book.objects.all().count()
     num_instances = BookInstance.objects.all().count()
-
+    # num_books_genre = Book.objects.filter(genre__name__contains='Fiction')
+    # print(num_books_genre)
     # Available books (status = 'a')
     num_instances_available = BookInstance.objects.filter(status__exact='a').count()
 
@@ -29,3 +30,10 @@ def index(request):
 
     # Render the HTML template index.html with the data in the context variable
     return render(request, 'catalog/index.html', context=context)
+
+
+class BookView(generic.ListView):
+    model = Book
+
+    # def get_queryset(self):
+    #     return Book.objects.filter(title__icontains='war')[:5]  # Get 5 books containing the title war

@@ -8,5 +8,6 @@ urlpatterns = [
     # # ex: /polls/5/results/
     # path('<int:question_id>/results/', views.results, name='results'),
     # ex: /polls/5/vote/
-    path('',views.index, name='index')
+    path('',views.index, name='index'),
+    path('books/', views.BookListView.as_view(), name='index')
 ]
