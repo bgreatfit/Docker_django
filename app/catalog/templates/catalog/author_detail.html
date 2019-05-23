@@ -1,0 +1,13 @@
+{% extends "catalog/base_generic.html" %}
+
+{% block content %}
+  <h1>Title: {{ book.title }}</h1>
+
+  <p><strong>First Name:</strong> <a href="{% comment %}{%  url 'book.author.get_absolute_url' %}{% endcomment %}}">{{ book.author }}</a></p> <!-- author detail link not yet defined -->
+  <p><strong>Last Name:</strong> {{ author.last_name }}</p>
+  <p><strong>Date of Birth:</strong> {{ author.date_of_birth }}</p>
+  <p><strong>Death:</strong> {{ author.date_of_death }}</p>
+  <p><strong>Books:</strong> {% for book in author.book_set.all %} {{ book }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+
+
+{% endblock %}

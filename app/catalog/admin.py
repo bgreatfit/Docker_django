@@ -25,8 +25,14 @@ class BookInstanceAdmin(admin.ModelAdmin):
     list_filter = ('status', 'due_back')
     fieldsets = (
         (None, {'fields': ('book', 'imprint', 'id')}),
-        ('Availability', {'fields': ('status', 'due_back')})
+        ('Availability', {
+            'fields': ('status', 'due_back', 'borrower')
+        }),
     )
+
+
+class BookInline(admin.StackedInline):
+    model = Book
 
 
 @admin.register(Author)
@@ -35,6 +41,7 @@ class AuthorAdmin(admin.ModelAdmin):
     list_filter = ['date_of_birth']
     search_fields = ['first_name']
     fields = [('last_name', 'first_name'),('date_of_birth', 'date_of_death')]
+    inlines = [BookInline]
 
 
 

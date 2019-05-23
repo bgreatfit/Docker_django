@@ -16,6 +16,7 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include
+from . import views
 
 # if settings.DEBUG:
 #     import debug_toolbar
@@ -26,6 +27,16 @@ urlpatterns = [
 urlpatterns += [
     # path('__debug__/', include(debug_toolbar.urls)),
     path('polls/', include('polls.urls')),
-    #path('blog/', include('blog.urls')),
+    # path('blog/', include('blog.urls')),
     path('catalog/', include('catalog.urls'))
+]
+# Add Django site authentication urls (for login, logout, password management)
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
+    path('signup/', views.signup),
+    path('register/', views.Register.as_view(), name="register"),
+]
+#Add Django site authentication urls (for login, logout, password management)
+urlpatterns += [
+    path('accounts/', include('django.contrib.auth.urls')),
 ]

@@ -28,7 +28,7 @@ class Book(models.Model):
         return self.title
 
     def get_absolute_url(self):
-        return reverse('book-detail', args=[str(self.id)])
+        return reverse('catalog:book-detail', args=[str(self.id)])
 
     def display_genre(self):
         """Create a string for the Genre. This is required to display genre in Admin."""
@@ -56,6 +56,7 @@ class BookInstance(models.Model):
     imprint = models.CharField(max_length=200)
     borrower = models.ForeignKey(User, on_delete=models.SET_NULL, null=True, blank=True)
     due_back = models.DateField(null=True, blank=True)
+
     LOAN_STATUS = (
         ('m', 'Maintenance'),
         ('o', 'On loan'),
@@ -78,6 +79,12 @@ class BookInstance(models.Model):
         """String for representing the Model object."""
         return f'{self.id} ({self.book.title})'
 
+    @property
+    def is_overdue(self):
+        if self.due_back and date.today() > self.due_back:
+            return True
+        return False
+
 
 class Author(models.Model):
     """Model representing an author."""
@@ -91,8 +98,21 @@ class Author(models.Model):
 
     def get_absolute_url(self):
         """Returns the url to access a particular author instance."""
-        return reverse('author-detail', args=[str(self.id)])
+        return reverse('catalog:author-detail', args=[str(self.id)])
 
     def __str__(self):
         """String for representing the Model object."""
-        return f'{self.last_name}, {self.first_name}'
+        return f'{self.last_name}, {self.first_name}'.strip()
+
+
+# class Profile(models.Model):
+#     user = models.OneToOneField(User, on_delete=models.CASCADE)
+#     bio = models.TextField(max_length=500, blank=True)
+#     location = models.CharField(max_length=30, blank=True)
+#     birth_date = models.DateField(null=True, blank=True)
+#
+# @receiver(post_save, sender=User)
+# def update_user_profile(sender, instance, created, **kwargs):
+#     if created:
+#         Profile.objects.create(user=instance)
+#     instance.profile.save()

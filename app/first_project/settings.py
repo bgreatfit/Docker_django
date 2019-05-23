@@ -59,6 +59,7 @@ INSTALLED_APPS = [
     'polls.apps.FirstAppConfig',
     'blog.apps.BlogConfig',
     'catalog.apps.CatalogConfig',
+    'first_project',
 ]
 
 MIDDLEWARE = [
@@ -159,4 +160,6 @@ USE_TZ = True
 STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 STATIC_URL = '/static/'
 
-LOGIN_REDIRECT_URL = '/'
+LOGIN_REDIRECT_URL = '/catalog/'
+EMAIL_BACKEND = 'django.core.mail.backends.filebased.EmailBackend'
+EMAIL_FILE_PATH = '/first_project/app-messages' # change this to a proper location
