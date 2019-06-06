@@ -1,16 +1,22 @@
-from django.contrib.auth.mixins import LoginRequiredMixin
-from django.shortcuts import render,redirect
+import datetime
+
+from django.contrib.auth.mixins import LoginRequiredMixin, PermissionRequiredMixin
+from django.http import HttpResponseRedirect
+from django.shortcuts import render, redirect, get_object_or_404
+from django.urls import reverse, reverse_lazy
 from django.views import generic
 from django.contrib.auth import login, authenticate
 from django.contrib.auth.forms import UserCreationForm
-from django.contrib.auth.decorators import login_required
-from .forms import SignUpForm
+from django.contrib.auth.decorators import login_required, permission_required
+from django.views.generic.edit import  CreateView, DeleteView, UpdateView
+from .forms import SignUpForm,RenewBookForm
+
 # Create your views here.
 
 
 from .models import Book, Author, BookInstance, Genre
 
-@login_required
+
 def index(request):
     request = request
     """View function for home page of site."""
@@ -81,10 +87,66 @@ def signup(request):
     return render(request, 'catalog/signup.html', {'form': form})
 
 
-class LoanedBooksByUserListView(LoginRequiredMixin, generic.ListView):
+class LoanedBooksByUserListView(LoginRequiredMixin,generic.ListView, PermissionRequiredMixin):
     template_name = 'catalog/bookinstance_list_borrowed_user.html'
     paginate_by = 10
     model = BookInstance
+    # Or multiple permissions
+    permission_required = ('catalog.can_mark_returned', 'catalog.can_edit')
+
+    # Note that 'catalog.can_edit' is just an example
+    # the catalog application doesn't have such permission!
 
     def get_queryset(self):
-        return  BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o').order_by('due_back')
+        return BookInstance.objects.filter(borrower=self.request.user).filter(status__exact='o').order_by('due_back')
+
+
+class AllLoanedBooksListView(PermissionRequiredMixin, LoginRequiredMixin,generic.ListView):
+    model = BookInstance
+    template_name = 'catalog/bookinstance_list_borrowed_all.html'
+
+    # Or multiple permissions
+    permission_required = ('catalog.can_mark_returned', 'catalog.can_edit')
+
+    # Note that 'catalog.can_edit' is just an example
+    # the catalog application doesn't have such permission!
+
+    def get_queryset(self):
+        return BookInstance.objects.filter(status__exact='o').order_by('due_back')
+
+@permission_required('catalog.can_mark_returned')
+def renew_book_librarian(request, pk):
+    book_instance = get_object_or_404(BookInstance, pk=pk)
+    form = RenewBookForm()
+    if request.method == 'POST':
+        form = RenewBookForm(request.POST)
+        if form.is_valid():
+            book_instance.due_back = form.cleaned_data['renewal_date']
+            book_instance.save()
+            return HttpResponseRedirect(reverse('catalog:all-borrowed'))
+        else:
+            proposed_renewal_date = datetime.date.today() + datetime.timedelta(weeks=3)
+            form = RenewBookForm(initial={'renewal_date': proposed_renewal_date})
+
+    context = {'form': form,
+               'book_instance': book_instance}
+    return render(request,'catalog/book_renew_librarian.html',context=context)
+
+
+class AuthorCreate(CreateView):
+    model = Author
+    fields = '__all__' \
+             ''
+    initial = {'date_of_death': '2017-06-5'}
+
+
+class AuthorUpdate(UpdateView):
+    model = Author
+    fields = ['first_name', 'last_name', 'date_of_birth', 'death_of_death']
+
+
+class AuthorDelete(DeleteView):
+    model = Author
+    success_url = reverse_lazy('catalog:authors')
+
+

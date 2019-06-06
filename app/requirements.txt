@@ -7,3 +7,4 @@ pytest
 pytest-django
 pytest-cov
 setuptools
+ipdb

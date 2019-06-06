@@ -1,0 +1,10 @@
+{% include "django/forms/widgets/input.html" %}
+
+<script>
+
+    $(document).ready(function(){
+        $("input[name='{{ widget.name }}']").datepicker({
+          format: 'yyyy-mm-dd'
+        });
+    })
+</script>
