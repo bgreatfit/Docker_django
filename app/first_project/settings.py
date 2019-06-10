@@ -18,7 +18,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '(*f6aidpp)2ba^1&447it2%e5#dx9w(=zs)m9gq0#i(##3t30k'
+SECRET_KEY = os.environ['DJANGO_SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -40,9 +40,9 @@ if DEBUG:
         'debug_toolbar.panels.redirects.RedirectsPanel',
     ]
 
-    DEBUG_TOOLBAR_CONFIG = {
-        'INTERCEPT_REDIRECTS': False,
-    }
+    # DEBUG_TOOLBAR_CONFIG = {
+    #     'INTERCEPT_REDIRECTS': False,
+    # }
 ALLOWED_HOSTS = ["localhost", "127.0.0.1"]
 
 # Application definition
@@ -71,8 +71,9 @@ MIDDLEWARE = [
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
     'debug_toolbar.middleware.DebugToolbarMiddleware',
 ]
+DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
-ROOT_URLCONF = 'first_project.urls'
+#ROOT_URLCONF = 'first_project.urls'
 
 TEMPLATES = [
     {
@@ -107,13 +108,14 @@ WSGI_APPLICATION = 'first_project.wsgi.application'
 #         },
 #     }
 # }
+
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': 'docker_django_db',
-        'USER': 'dbuser',
-        'PASSWORD': 'dbpw',
-        'HOST': 'mysql',
+        'NAME': os.environ.get('DB_NAME'),
+        'USER': os.environ.get('DB_USER'),
+        'PASSWORD': os.environ.get('DB_PWD'),
+        'HOST': os.environ.get('DB_HOST'),
         'PORT': '3306'
     }
 }
