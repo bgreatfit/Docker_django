@@ -29,6 +29,6 @@ env:
     DB_USER:
       "dbuser"
     DJANGO_SECRET_KEY:
-      '(*f6aidpp)2ba^1&447it2%e5#dx9wzsm9gq0#i(##3t30k|'
+      '1234567890'
     PROJECT_NAME:
       "docker_django"
