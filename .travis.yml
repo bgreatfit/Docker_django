@@ -8,12 +8,12 @@ script:
 - docker-compose exec django python manage.py test polls
 deploy:
   provider: elasticbeanstalk
-  region: us-east-2
-  app: docker-django
-  env: DockerDjango-env
-  bucket_name: elasticbeanstalk-us-east-2-745020165956
-  bucket_path: docker-django
-  true:
+  region: "us-east-2"
+  app: "docker-django"
+  env: "DockerDjango-env"
+  bucket_name: "elasticbeanstalk-us-east-2-745020165956"
+  bucket_path: "docker-django"
+  on:
     branch: master
   access_key_id: $AWS_ACCESS_KEY
   secret_access_key:
