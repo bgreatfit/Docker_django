@@ -73,7 +73,7 @@ MIDDLEWARE = [
 ]
 DEBUG_TOOLBAR_PATCH_SETTINGS = False
 
-#ROOT_URLCONF = 'first_project.urls'
+ROOT_URLCONF = 'first_project.urls'
 
 TEMPLATES = [
     {
