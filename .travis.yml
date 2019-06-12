@@ -21,14 +21,14 @@ deploy:
 env:
   global:
     DB_HOST:
-      "mysql"
+      mysql
     DB_NAME:
-      "docker_django_db"
+      docker_django_db
     DB_PWD:
-      "dbpw"
+      dbpw
     DB_USER:
-      "dbuser"
+      dbuser
     DJANGO_SECRET_KEY:
-      "1234567890"
+      1234567890
     PROJECT_NAME:
-      "docker_django"
+      docker_django
