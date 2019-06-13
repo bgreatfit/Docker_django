@@ -15,7 +15,7 @@ before_install:
 - docker-compose up -d
 script:
 #- echo "Test"
-- docker-compose exec django python manage.py test polls
+- docker-compose exec django python manage.py test 
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
