@@ -10,6 +10,7 @@ env:
     - DB_USER=dbuser
     - DJANGO_SECRET_KEY=1234567890
     - PROJECT_NAME=docker_django
+    - DJANGO_SECRET_KEY='1234567890'
 before_install:
 - docker-compose up -d
 script:
