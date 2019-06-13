@@ -14,8 +14,8 @@ env:
 before_install:
 - docker-compose up -d
 script:
-#- echo "Test"
-- docker-compose exec django python manage.py test 
+- echo $DJANGO_SECRET_KEY
+#- docker-compose exec django python manage.py test
 deploy:
   provider: elasticbeanstalk
   region: "us-east-2"
