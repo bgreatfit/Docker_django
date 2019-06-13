@@ -4,12 +4,12 @@ services:
 - docker
 env:
   global:
-    DB_HOST=mysql
-    DB_NAME=docker_django_db
-    DB_PWD=dbpw
-    DB_USER=dbuser
-    DJANGO_SECRET_KEY=1234567890
-    PROJECT_NAME=docker_django
+    - DB_HOST=mysql
+    - DB_NAME=docker_django_db
+    - DB_PWD=dbpw
+    - DB_USER=dbuser
+    - DJANGO_SECRET_KEY=1234567890
+    - PROJECT_NAME=docker_django
 before_install:
 - docker-compose up -d
 script:
