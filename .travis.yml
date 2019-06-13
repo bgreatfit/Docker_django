@@ -13,6 +13,12 @@ env:
 before_install:
 - docker-compose up -d
 script:
+  export DB_HOST=$DB_HOST
+  export DB_NAME=$DB_NAME
+  export DB_PWD=$DB_PWD
+  export DB_USER=$DB_USER
+  export DJANGO_SECRET_KEY=$DJANGO_SECRET_KEY
+  export PROJECT_NAME=$PROJECT_NAME
 - docker-compose exec django python manage.py test polls
 deploy:
   provider: elasticbeanstalk
