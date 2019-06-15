@@ -1,0 +1,110 @@
+{
+    "containerDefinitions": [
+        {
+            "command": [
+                ".entrypoint.sh"
+            ],
+            "essential": true,
+            "image": "mikegreat/docker-django",
+            "memory": 4,
+            "mountPoints": [
+                {
+                    "containerPath": "/app",
+                    "sourceVolume": "_App"
+                },
+                {
+                    "containerPath": "/app/static",
+                    "sourceVolume": "Static_Volume"
+                }
+            ],
+            "name": "django"
+        },
+        {
+            "essential": true,
+            "image": "mysql:5.6",
+            "memory": 4,
+            "mountPoints": [
+                {
+                    "containerPath": "/var/lib/mysql",
+                    "sourceVolume": "Mysql-Data"
+                }
+            ],
+            "name": "mysql",
+            "portMappings": [
+                {
+                    "containerPort": 3306,
+                    "hostPort": 8306
+                }
+            ]
+        },
+        {
+            "essential": true,
+            "image": "mikegreat/docker-nginx",
+            "memory": 4,
+            "mountPoints": [
+                {
+                    "containerPath": "/app/static",
+                    "sourceVolume": "Static_Volume"
+                }
+            ],
+            "name": "nginx",
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 1337
+                }
+            ]
+        },
+        {
+            "environment": [
+                {
+                    "name": "PMA_ARBITRARY",
+                    "value": "1"
+                }
+            ],
+            "essential": true,
+            "image": "phpmyadmin/phpmyadmin",
+            "memory": 4,
+            "mountPoints": [
+                {
+                    "containerPath": "/session",
+                    "sourceVolume": "Session"
+                }
+            ],
+            "name": "phpmyadmin",
+            "portMappings": [
+                {
+                    "containerPort": 80,
+                    "hostPort": 8082
+                }
+            ]
+        }
+    ],
+    "family": "",
+    "volumes": [
+        {
+            "host": {
+                "sourcePath": "./app"
+            },
+            "name": "_App"
+        },
+        {
+            "host": {
+                "sourcePath": "static_volume"
+            },
+            "name": "Static_Volume"
+        },
+        {
+            "host": {
+                "sourcePath": "mysql-data"
+            },
+            "name": "Mysql-Data"
+        },
+        {
+            "host": {
+                "sourcePath": "/session"
+            },
+            "name": "Session"
+        }
+    ]
+}

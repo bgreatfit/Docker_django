@@ -19,11 +19,11 @@ version: "3.1"
 services:
 
     django:
-      build: ./app
+      image: mikegreat/docker-django
       container_name: ${PROJECT_NAME}-django
       command: .entrypoint.sh
-#      env_file:
-#        - .env
+      env_file:
+        - .env
       volumes:
         - ./app:/app
         - static_volume:/app/static
@@ -31,19 +31,16 @@ services:
          - 8000
       depends_on:
         - mysql
+      mem_limit: 300
 
     mysql:
       image: mysql:5.6
       container_name: ${PROJECT_NAME}-mysql
       volumes:
         - mysql-data:/var/lib/mysql
-      environment:
-        - MYSQL_ROOT_PASSWORD=docker_root
-        - MYSQL_DATABASE=docker_django_db
-        - MYSQL_USER=dbuser
-        - MYSQL_PASSWORD=dbpw
       ports:
         - "8306:3306"
+      mem_limit: 300
 
 
     phpmyadmin:
@@ -56,9 +53,10 @@ services:
              - 8082:80
       volumes:
              - /session
+      mem_limit: 300
 
     nginx:
-      build: ./nginx
+      image: mikegreat/docker-nginx
       container_name: ${PROJECT_NAME}-nginx
       volumes:
            - static_volume:/app/static
@@ -66,6 +64,7 @@ services:
            - 1337:80
       depends_on:
           - django
+      mem_limit: 300
 
 
 volumes:
