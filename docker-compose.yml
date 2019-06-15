@@ -31,7 +31,6 @@ services:
          - 8000
       depends_on:
         - mysql
-      mem_limit: 300
 
     mysql:
       image: mysql:5.6
@@ -40,7 +39,6 @@ services:
         - mysql-data:/var/lib/mysql
       ports:
         - "8306:3306"
-      mem_limit: 300
 
 
     phpmyadmin:
@@ -53,7 +51,6 @@ services:
              - 8082:80
       volumes:
              - /session
-      mem_limit: 300
 
     nginx:
       image: mikegreat/docker-nginx
@@ -64,7 +61,6 @@ services:
            - 1337:80
       depends_on:
           - django
-      mem_limit: 300
 
 
 volumes:
