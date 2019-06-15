@@ -22,8 +22,6 @@ services:
       image: mikegreat/docker-django
       container_name: ${PROJECT_NAME}-django
       command: .entrypoint.sh
-      env_file:
-        - .env
       volumes:
         - ./app:/app
         - static_volume:/app/static
