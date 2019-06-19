@@ -59,6 +59,8 @@ INSTALLED_APPS = [
     'polls.apps.FirstAppConfig',
     'blog.apps.BlogConfig',
     'catalog.apps.CatalogConfig',
+    'rest_framework',
+    'music'
 ]
 
 MIDDLEWARE = [

@@ -37,4 +37,8 @@ if settings.DEBUG:
         path('signup/', views.signup),
         path('register/', views.Register.as_view(), name="register"),
     ]
+
+    urlpatterns += [
+        path('music/', include('music.urls')),
+    ]
     #Add Django site authentication urls (for login, logout, password management)
