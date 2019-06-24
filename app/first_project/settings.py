@@ -60,7 +60,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'catalog.apps.CatalogConfig',
     'rest_framework',
-    'music'
+    'music.apps.MusicConfig'
 ]
 
 MIDDLEWARE = [

@@ -32,7 +32,7 @@
                 ".entrypoint.sh"
             ],
             "essential": true,
-            "image": "mikegreat/docker-django",
+            "image": "mikegreat/docker-django:v2",
             "memory": 128,
             "mountPoints": [
                 {

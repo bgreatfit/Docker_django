@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf import settings
 from django.contrib import admin
-from django.urls import path, include
+from django.urls import path, include, re_path
 from . import views
 
 if settings.DEBUG:
@@ -39,6 +39,6 @@ if settings.DEBUG:
     ]
 
     urlpatterns += [
-        path('music/', include('music.urls')),
+        re_path('/api/(?P<version>(v1|v2))/', include('music.urls')),
     ]
     #Add Django site authentication urls (for login, logout, password management)
