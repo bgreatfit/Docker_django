@@ -60,7 +60,8 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'catalog.apps.CatalogConfig',
     'rest_framework',
-    'music.apps.MusicConfig'
+    'music.apps.MusicConfig',
+    'courses.apps.CoursesConfig'
 ]
 
 MIDDLEWARE = [
@@ -161,3 +162,13 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/catalog/'
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
+
+# REST FRAMEWORK
+# REST_FRAMEWORK = {
+#     'DEFAULT_AUTHENTICATION_CLASSES': (
+#         'rest_framework.authentication.SessionAuthentication'
+#     ),
+#     'DEFAULT_PERMISSION_CLASSES': (
+#         'rest_framework.permissions.IsAuthenticatedOrReadOnly'
+#     )
+# }

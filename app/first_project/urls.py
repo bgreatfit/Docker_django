@@ -37,8 +37,12 @@ if settings.DEBUG:
         path('signup/', views.signup),
         path('register/', views.Register.as_view(), name="register"),
     ]
+    urlpatterns += [
+        re_path('/api-auth/', include('rest_framework.urls', namespace='rest_framework')),
+        ]
 
     urlpatterns += [
         re_path('/api/(?P<version>(v1|v2))/', include('music.urls')),
     ]
+
     #Add Django site authentication urls (for login, logout, password management)

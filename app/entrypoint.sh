@@ -1,10 +1,10 @@
 #!/bin/bash
 
 # Collect static files
-#echo "Collect static files"
-#python manage.py collectstatic --noinput
-#Apply database migrations
-RUN pip install djangorestframework
+echo "Collect static files"
+python manage.py collectstatic --noinput
+echo "Apply database migrations"
+#RUN pip install djangorestframework
 python manage.py makemigrations
 ##
 python manage.py migrate
