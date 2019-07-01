@@ -44,5 +44,8 @@ if settings.DEBUG:
     urlpatterns += [
         re_path('/api/(?P<version>(v1|v2))/', include('music.urls')),
     ]
+    urlpatterns += [
+        re_path('/api/v1/courses', include('courses.urls')),
+    ]
 
     #Add Django site authentication urls (for login, logout, password management)
