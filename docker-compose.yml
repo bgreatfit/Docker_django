@@ -19,7 +19,7 @@ version: "3.1"
 services:
 
     django:
-      build: ./app
+      build: app
       container_name: ${PROJECT_NAME}-django
       command: .entrypoint.sh
       env_file:

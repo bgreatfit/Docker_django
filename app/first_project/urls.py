@@ -16,7 +16,14 @@ Including another URLconf
 from django.conf import settings
 from django.contrib import admin
 from django.urls import path, include, re_path
+from rest_framework.routers import DefaultRouter,SimpleRouter
 from . import views
+from courses import views as course_view
+#from first_project.app.courses import views
+router = SimpleRouter()
+router.register(r'courses', course_view.CourseViewSet)
+router.register(r'reviews', course_view.ReviewViewSet)
+router.register(r'users', course_view.UserViewSet)
 
 if settings.DEBUG:
     import debug_toolbar
@@ -45,7 +52,10 @@ if settings.DEBUG:
         re_path('/api/(?P<version>(v1|v2))/', include('music.urls')),
     ]
     urlpatterns += [
-        re_path('/api/v1/courses', include('courses.urls')),
+        re_path('api/v1/courses/', include('courses.urls')),
+    ]
+    urlpatterns += [
+        re_path('api/v2/', include((router.urls, 'course'), namespace='apiv2')),
     ]
 
     #Add Django site authentication urls (for login, logout, password management)

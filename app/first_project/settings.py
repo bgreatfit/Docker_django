@@ -13,6 +13,8 @@ https://docs.djangoproject.com/en/2.1/ref/settings/
 import os
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
+import sys
+
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/2.1/howto/deployment/checklist/
@@ -61,7 +63,7 @@ INSTALLED_APPS = [
     'catalog.apps.CatalogConfig',
     'rest_framework',
     'music.apps.MusicConfig',
-    'courses.apps.CoursesConfig'
+    'courses.apps.CoursesConfig',
 ]
 
 MIDDLEWARE = [
@@ -162,7 +164,8 @@ STATIC_URL = '/static/'
 LOGIN_REDIRECT_URL = '/catalog/'
 EMAIL_BACKEND = "django.core.mail.backends.filebased.EmailBackend"
 EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
-
+# PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
+# sys.path.append(os.path.join(PROJECT_ROOT, 'first_project'))
 # REST FRAMEWORK
 # REST_FRAMEWORK = {
 #     'DEFAULT_AUTHENTICATION_CLASSES': (
