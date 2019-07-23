@@ -52,7 +52,7 @@ if settings.DEBUG:
         re_path('/api/(?P<version>(v1|v2))/', include('music.urls')),
     ]
     urlpatterns += [
-        re_path('api/v1/courses/', include('courses.urls')),
+        re_path('api/v1/', include('courses.urls')),
     ]
     urlpatterns += [
         re_path('api/v2/', include((router.urls, 'course'), namespace='apiv2')),

@@ -1,10 +1,10 @@
 from django.contrib.auth.models import User
 from django.shortcuts import render, get_object_or_404
-from rest_framework.decorators import detail_route
+from rest_framework.decorators import detail_route, api_view
 from rest_framework.views import APIView
 from rest_framework import generics, status, viewsets, permissions
 from rest_framework.response import Response
-
+from rest_framework.reverse import reverse, reverse_lazy
 from .permissions import IsOwnerOrReadOnly
 from .models import Course, Review
 from .serializer import CourseSerializer, ReviewSerializer, UserSerializer
@@ -27,7 +27,7 @@ from .serializer import CourseSerializer, ReviewSerializer, UserSerializer
 #         serializer = SnippetSerializer(snippet)
 #         return Response(serializer.data)
 #
-#     def put(self, request, pk, format=None):
+#    ry def put(self, request, pk, format=None):
 #         snippet = self.get_object(pk)
 #         serializer = SnippetSerializer(snippet, data=request.data)
 #         if serializer.is_valid():
@@ -39,6 +39,20 @@ from .serializer import CourseSerializer, ReviewSerializer, UserSerializer
 #         snippet = self.get_object(pk)
 #         snippet.delete()
 #         return Response(status=status.HTTP_204_NO_CONTENT)
+
+# entry point of API
+@api_view(['GET'])
+def api_root(request, format=None):
+    return Response(
+        {
+            'courses': reverse_lazy('course:course-list', request=request, format=format),
+            #'reviews': reverse('course:review-list', request=request, format=format),
+            'users': reverse_lazy('course:user-list', request= request, format=format)
+
+        }
+    )
+
+
 class UserList(generics.ListAPIView):
     queryset = User.objects.all()
     serializer_class = UserSerializer
@@ -66,7 +80,7 @@ class ListCourseView(APIView):
 class CourseListView(generics.ListCreateAPIView):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
-    permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
+    #permission_classes = (permissions.IsAuthenticatedOrReadOnly,)
 
     def perform_create(self, serializer):
         serializer.save(owner=self.request.user)
@@ -110,14 +124,19 @@ class RetrieveUpdateDestroyReview(generics.RetrieveUpdateDestroyAPIView):
     # return Response(serializer.data)
 
 
-class CourseViewSet(viewsets.ReadOnlyModelViewSet):
+class CourseViewSet(viewsets.ModelViewSet):
     queryset = Course.objects.all()
     serializer_class = CourseSerializer
 
     @detail_route(methods=['get'])
     def reviews(self, request, pk=None):
-        course = self.get_object()
-        serializer = ReviewSerializer(course.reviews.all(), many=True)
+        self.pagination_class.page_size = 1
+        reviews = Review.objects.filter(course_id=pk)
+        page = self.paginate_queryset(reviews)
+        if page is not None:
+            serializer = ReviewSerializer(page, many=True)
+            return self.get_paginated_response(serializer.data)
+        serializer = ReviewSerializer(reviews, many=True)
         return Response(serializer.data)
 
     def perform_create(self, serializer):

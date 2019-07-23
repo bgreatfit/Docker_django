@@ -48,7 +48,7 @@ def index(request):
 class BookListView(generic.ListView):
     model = Book
     template_name = 'catalog/book_list'
-    paginate_by = 1
+    #paginate_by = 1
 
     # def get_queryset(self):
     #     return Book.objects.filter(title__icontains='war')[:5]  # Get 5 books containing the title war

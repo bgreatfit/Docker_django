@@ -62,6 +62,7 @@ INSTALLED_APPS = [
     'blog.apps.BlogConfig',
     'catalog.apps.CatalogConfig',
     'rest_framework',
+    'rest_framework.authtoken',
     'music.apps.MusicConfig',
     'courses.apps.CoursesConfig',
 ]
@@ -167,11 +168,14 @@ EMAIL_FILE_PATH = os.path.join(BASE_DIR, "sent_emails")
 # PROJECT_ROOT = os.path.abspath(os.path.join(os.path.dirname(__file__), '..'))
 # sys.path.append(os.path.join(PROJECT_ROOT, 'first_project'))
 # REST FRAMEWORK
-# REST_FRAMEWORK = {
-#     'DEFAULT_AUTHENTICATION_CLASSES': (
-#         'rest_framework.authentication.SessionAuthentication'
-#     ),
-#     'DEFAULT_PERMISSION_CLASSES': (
-#         'rest_framework.permissions.IsAuthenticatedOrReadOnly'
-#     )
-# }
+REST_FRAMEWORK = {
+    'DEFAULT_AUTHENTICATION_CLASSES': (
+        'rest_framework.authentication.TokenAuthentication',
+    )
+    ,
+    # 'DEFAULT_PERMISSION_CLASSES':
+    #     'rest_framework.permissions.IsAuthenticatedOrReadOnly'
+    # ,
+    'DEFAULT_PAGINATION_CLASS': 'rest_framework.pagination.PageNumberPagination',
+    'PAGE_SIZE': 5
+}
