@@ -13,7 +13,7 @@ python_version = "3.6"
 
 [packages]
 mysqlclient = "==1.3.14"
-django = "==2.1.5"
+django = "==2.1.11"
 django-debug-toolbar = "==1.11"
 faker = "==1.0.2"
 isort = "*"
